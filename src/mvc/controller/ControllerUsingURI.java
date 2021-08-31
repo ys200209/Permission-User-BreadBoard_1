@@ -31,13 +31,16 @@ public class ControllerUsingURI extends HttpServlet {
 				throw new ServletException(e);
 			}
 			Iterator keyIter = prop.keySet().iterator();
+			System.out.println("(ControllerUsingURI) 1.");
 			while (keyIter.hasNext()) {
 				String command = (String) keyIter.next();
+				System.out.println("command = " + command);
 				String handlerClassName = prop.getProperty(command);
 				try {
 					Class<?> handlerClass = Class.forName(handlerClassName);
 					CommandHandler handlerInstance =
 							(CommandHandler) handlerClass.newInstance();
+					commandHandlerMap.put(command, handlerInstance);
 				} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
 					throw new ServletException(e);
 				}

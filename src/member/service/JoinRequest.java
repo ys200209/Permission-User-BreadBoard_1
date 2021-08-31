@@ -45,14 +45,14 @@ public class JoinRequest {
 		return password != null && password.equals(confirmPassword);
 	}
 	
-	public void vaildate(Map<String ,Boolean> errors) { // 값이 올바른지 검사하는 기능.
+	public void validate(Map<String ,Boolean> errors) { // 값이 올바른지 검사하는 기능.
 		checkEmpty(errors, id, "id");
 		checkEmpty(errors, name, "name");
 		checkEmpty(errors, password, "password");
 		checkEmpty(errors, confirmPassword, "confirmPassword");
 		if (!errors.containsKey("confirmPassword")) {
 			if (!isPasswordEqualToConfirm()) {
-				errors.put("noMatch", Boolean.TRUE);
+				errors.put("notMatch", Boolean.TRUE);
 			}
 		}
 	}
