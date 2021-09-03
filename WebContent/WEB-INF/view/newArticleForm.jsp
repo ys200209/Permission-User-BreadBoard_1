@@ -6,22 +6,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
+<title>게시글 쓰기</title>
 </head>
 <body>
-<form action="login.do" method="post">
+<form action="write.do" method="post">
 <c:if test="${errors.idOrPwNotMatch}">
 아이디와 암호가 일치하지 않습니다.
 </c:if>
 <p>
-	아이디:<br/><input type="text" name="id" value="${param.id}">
-	<c:if test="${errors.id}">ID를 입력하세요.</c:if>
+	제목:<br/><input type="text" name="title" value="${param.title}">
+	<c:if test="${errors.title}">제목을 입력하세요.</c:if>
 </p>	
 <p>
-	암호:<br/><input type="password" name="password">
-	<c:if test="${errors.password}">암호를 입력하세요.</c:if>
+	내용:<br/>
+	<textarea type="content" rows="5" cols="30">${param.content}</textarea>
 </p>
-<input type="submit" value="로그인">
+<input type="submit" value="새 글 등록">
 </form>
 </body>
 </html>
