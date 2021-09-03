@@ -11,7 +11,7 @@ import article.model.ArticleContent;
 import jdbc.JdbcUtil;
 import jdbc.connection.ConnectionProvider;
 
-public class WriterArticleService {
+public class WriteArticleService {
 	
 	private ArticleDao articleDao = new ArticleDao();
 	private ArticleContentDao contentDao = new ArticleContentDao();
